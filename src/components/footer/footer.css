@@ -1,0 +1,13 @@
+footer {
+    background-color: #ffffff;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.addressFooter, .addressFooter p {
+    font-size: 14px;
+}
+
+.addressFooter {
+    background-color: #ffffff;
+}

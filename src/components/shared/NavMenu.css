@@ -1,0 +1,45 @@
+﻿a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+a.text-light {
+    color:#f2f2f2;
+}
+
+.nav-link {
+    font-size: 16px;
+    font-weight: bold;
+    padding-right: 0.20rem !important;
+    padding-left: 0.2rem !important;
+}
+
+a.text-blue {
+    color: #003166 !important;
+    font-weight:bold;
+}
+
+a.text-blue:hover {
+    color: #003166 !important;
+    font-weight: bold;
+}
+
+.menu-button {
+    background-color: #003166;
+    border:none;
+    color: #FFFFFF;
+}
+
+.nav-link-coursor {
+    cursor:pointer;
+}
+
+html {
+    font-size: 24px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 26px;
+  }
+}

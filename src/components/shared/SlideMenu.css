@@ -1,0 +1,122 @@
+﻿/* Position and sizing of burger button */
+.bm-burger-button {
+    position: fixed;
+    width: 36px;
+    height: 30px;
+    left: 36px;
+    top: 36px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+    background:#051e38;
+    color: #ffffff
+}
+
+/* Color/shape of burger icon bars on hover*/
+.bm-burger-bars-hover {
+    background: #cf2554;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+    height: 24px;
+    width: 24px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+    color: #ffffff;
+}
+
+/*
+Sidebar wrapper styles
+Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+*/
+.bm-menu-wrap {
+    position: fixed;
+    height: 100%;
+}
+
+/* General sidebar styles */
+.bm-menu {
+    background: #051e38;
+    padding: 2.5em 1.5em 0;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+    fill: #051e38;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+    color: #ffffff;
+    padding: 0.8em;
+}
+
+/* Individual item */
+.bm-item, bm-item:active {
+    display: block;
+    outline: 0 !important;
+    outline-color: #003166 !important;
+    border: none !important;
+    -moz-outline-style: none !important;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+
+.bm-item-list a {
+    color: #ffffff;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.bm-item-list a:hover {
+    color: #ffffff;
+    font-size: 24px;
+}
+
+.bm-item-list-small a {
+    color: #ffffff;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.bm-item-list-small a:hover {
+    color: #ffffff;
+    font-size: 18px;
+}
+
+hr.bm-item {
+    margin: 20px 0px;
+    color: #ffffff;
+    border-top: 1px solid #ffffff !important;
+}
+
+.active {
+    border: none;
+    outline: 0 !important;
+    outline-color: #051e38 !important;
+    border: none !important;
+    -moz-outline-style: none !important;
+}
+
+.menu-item, .menu-item:active {
+    outline: 0 !important;
+    outline-color:#051e38 !important;
+    border: none !important;
+    -moz-outline-style: none !important;
+}
+
+.menu-item-small, .menu-item-small:active {
+    outline: 0 !important;
+    outline-color:#051e38 !important;
+    border: none !important;
+    -moz-outline-style: none !important;
+    font-size: 20px !important;
+}
