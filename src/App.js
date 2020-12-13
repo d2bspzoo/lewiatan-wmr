@@ -62,6 +62,7 @@ export default function  App()  {
       <Layout path={pathname}>
           <Switch>        
               <Route path="/notice/:url" exact component={Notice}  />
+              <Route path="/:url/:mode/:itemurl" exact component={Content} />
               <Route path="/:url" exact component={Content} />
               <Route path="/" exact component={Home}/>
               <Route component={PageNotFound} />

@@ -5,10 +5,16 @@ export class ContentLink extends Component {
         super();
     }
     componentWillMount() {
-        window.location = this.props.content.contentContent;
+        if(this.props.content != "")
+        {
+            window.location = this.props.content;
+        }
     }
     render() {
-        return (<section><p className="text-center">Redirecting...</p></section>);
+        return (
+            <div style={{marginTop:"20px", marginBottom:"20px", padding:"50px"}}>
+                <section><p className="text-center">Przekierowuję...</p></section>
+            </div>);
     }
 }
 

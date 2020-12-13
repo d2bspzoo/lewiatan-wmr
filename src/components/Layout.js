@@ -1,16 +1,17 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { NavMenu } from './shared/NavMenu';
 //import { NavMenuComponent } from './shared/NavMenuComponent';
 import { SlideMenu } from './shared/SlideMenu';
 import { MobileMenu } from './shared/MobileMenu';
 //import { MobileMenuComponent } from './shared/MobileMenuComponent';
 import Footer from './footer/Footer';
+import TopNavEU from './shared/TopNavUE'
 
 import { Responsive } from "responsive-react";
 
 import { CookieBanner } from './cookies/Cookiesindex';
 
-//import {accessToken, siteId, apiUrl } from '../config';
+import MessengerCustomerChat from './messangerChat/MessangeChat';
 
 import { clientConnect } from '../client';
 
@@ -54,17 +55,17 @@ export class Layout extends Component {
         }*/
 
         return (
-            <div>
-
+            <Fragment>
+            <header>
+            <TopNavEU />
                 <Responsive displayIn={["Mobile", "Tablet"]}>
                     {menuMobile}
                 </Responsive>
                 <Responsive displayIn={["Laptop", "LargerThanLaptop"]}>
                     <SlideMenu menuOpen={this.state.menuOpen} slideMenuCallback={this.callbackFunction} />
                     {menu}
-                </Responsive>
-
-
+                </Responsive>       
+            </header>
             <main>
               {this.props.children}
             </main>
@@ -85,7 +86,18 @@ export class Layout extends Component {
                 listTitle={this.state.static.cookieListTitle}
                 cookieName = {this.state.site.name}
             />
-          </div>
+
+            <MessengerCustomerChat
+                pageId="102482075067970"
+                themeColor= "#051E38"
+                language = "pl-PL"
+                version ="9.0"
+                attribution = "setup_tool"
+                loggedInGreeting = "Witaj! Masz pytanie? Porozmawiaj z nami!"
+                loggedOutGreeting ="Witaj! Masz pytanie? Porozmawiaj z nami!"
+                />
+
+          </Fragment>
     );
     }
 

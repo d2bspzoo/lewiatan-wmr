@@ -10,7 +10,7 @@ import { Helmet } from 'react-helmet';
 //import {accessToken, siteId, apiUrl } from '../../config';
 
 import { clientConnect } from '../../client';
-import { Container } from 'reactstrap';
+import { Container, Row } from 'reactstrap';
 
 export class Home extends Component {
     static displayName = Home.name;
@@ -82,6 +82,7 @@ export class Home extends Component {
             <Container>
                 <Header />
             </Container>
+
             {sections}
 
             {bottoms}

@@ -83,7 +83,7 @@ export class SlideMenu extends Component {
 
         return (
             <React.Fragment>
-                <Menu right customBurgerIcon={false} customCrossIcon={<i className="fa fa-times"></i>} isOpen={this.props.menuOpen} onStateChange={(state) => this.handleStateChange(state)} width={'350px'}>
+                <Menu right customBurgerIcon={false} customCrossIcon={<i className="fa fa-times"></i>} isOpen={this.props.menuOpen} onStateChange={(state) => this.handleStateChange(state)} width={'350px'} style={{top:"0"}}>
                     {secondaryMenu}
                 </Menu>
             </React.Fragment>

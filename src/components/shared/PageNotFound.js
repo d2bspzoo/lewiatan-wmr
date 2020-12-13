@@ -27,8 +27,7 @@ export class PageNotFound extends Component {
             <React.Fragment>
                 <div className="row justify-content-md-center" style={{ marginTop: '30px' }}>
                     <div className="col-md-10 text-center">
-                        <a href="/"><img src={process.env.PUBLIC_URL + '/images/logo.png'} alt="Biedronka" /></a>
-                        <h1>Mikołajki z Biedronką</h1>
+                        <h1>Błąd</h1>
                     </div>
                 </div>
                 <div className="row justify-content-md-center" style={{ marginTop: '0px' }}>
@@ -36,7 +35,7 @@ export class PageNotFound extends Component {
                         <p style={{ fontSize: "88px", fontWeight:"900" }}>404</p>
                         <p style={{ marginTop: '30px', marginBottom: '30px' }}>
                         </p>
-                        <p style={{ marginTop: '30px' }}>Page not found, go back to <a href="/">home page</a></p>
+                        <p style={{ marginTop: '30px' }}>Przyktro nam, ale poszukiwana strona nie została znaleziona, wróć do <a href="/">strony głównej</a></p>
                     </div>
                 </div>
             </React.Fragment>

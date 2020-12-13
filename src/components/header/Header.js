@@ -106,7 +106,8 @@ function Header(props) {
     (
     <Fragment>
     {items.length > 0 &&
-      ( 
+      (
+      <div className="margin-t-3">
       <Carousel
         activeIndex={activeIndex}
         next={next}
@@ -115,6 +116,7 @@ function Header(props) {
         <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
         {slides}
       </Carousel>
+      </div> 
       )
     }
     </Fragment>

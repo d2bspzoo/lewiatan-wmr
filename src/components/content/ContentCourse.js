@@ -1,12 +1,12 @@
-﻿import React, { Component, Fragment } from 'react'
+import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types';
 import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
-import EventDetails from '../event/EventDetails';
-import EventList from '../event/EventList';
+import CourseDetails from '../course/CourseDetails';
+import CourseList from '../course/CourseList';
 
 
-export class ContentCalendar extends Component {
-    
+export class ContentCourse extends Component {
+
     render() {
         return (
             <Fragment>
@@ -15,10 +15,10 @@ export class ContentCalendar extends Component {
         
                 {(() => {
                     switch (this.props.baseUrl.mode) {
-                        case 'event':
-                            return <EventDetails event={this.props.baseUrl.itemurl} baseUrl={this.props.baseUrl} />
+                        case 'course':
+                            return <CourseDetails course={this.props.baseUrl.itemurl} baseUrl={this.props.baseUrl} />
                         default:
-                            return <EventList baseUrl={this.props.baseUrl} content={this.props.content} title={this.props.title} />
+                            return <CourseList baseUrl={this.props.baseUrl} content={this.props.content} title={this.props.title} />
                     }
                 })()}
 
@@ -30,8 +30,8 @@ export class ContentCalendar extends Component {
     }
 }
 
-ContentCalendar.propTypes = {
+ContentCourse.propTypes = {
     content: PropTypes.object
 }
 
-export default ContentCalendar
+export default ContentCourse

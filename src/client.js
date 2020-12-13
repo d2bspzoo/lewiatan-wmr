@@ -12,7 +12,7 @@ function myCustomFetch(url, params) {
   }
 */
 
-import {accessToken, siteId, apiUrl } from './config';
+import {accessToken, siteId, apiUrl, apiUrl2 } from './config';
 
 export  async function clientConnect(url, ids , params) {
         
@@ -33,11 +33,27 @@ export  async function clientConnect(url, ids , params) {
         });
         const data = await response.json();
 
-        /*
-        return fetch(requestUrl, {
-          ...params,
-          headers: { 'X-BBCMS-TOKEN': accessToken, 'X-BBCMS-SITE': siteId },
-        }).then(response => response.json());
-        */
         return data;
   }
+
+  export  async function clientConnectCustom(url, ids , params) {
+        
+    var requestUrl = ""; 
+
+    if(ids != null)
+    {
+        requestUrl = apiUrl2 + url + "/" + ids
+    }
+    else
+    {
+        requestUrl = apiUrl2 + url;
+    }   
+
+    const response = await fetch(requestUrl, {
+      ...params,
+      headers: { 'X-BBCMS-TOKEN': accessToken, 'X-BBCMS-SITE': siteId },
+    });
+    const data = await response.json();
+
+    return data;
+}

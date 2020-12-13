@@ -9,8 +9,11 @@ import { clientConnect } from '../../client';
 import './SlideMenu.css'
 import './NavMenu.css'
 
+let mainColor = '#ffffff';
+
 export class MobileMenu extends Component {
     static displayName = MobileMenu.name;
+    
 
     showSettings(event) {
         event.preventDefault();
@@ -31,7 +34,7 @@ export class MobileMenu extends Component {
 
     listenScrollEvent = e => {
         if (window.scrollY > 100) {
-            this.setState({ color: '#262626' })
+            this.setState({ color: mainColor })
         }
         else {
             this.setState({ color: 'transparent' })
@@ -141,13 +144,13 @@ export class MobileMenu extends Component {
 
         return (
             <React.Fragment>
-                <Menu right customBurgerIcon={false} customCrossIcon={<i className="fa fa-times"></i>} isOpen={this.state.menuOpen} onStateChange={(state) => this.handleStateChange(state)} width={'350px'}>
+                <Menu right customBurgerIcon={false} customCrossIcon={<i className="fa fa-times"></i>} isOpen={this.state.menuOpen} onStateChange={(state) => this.handleStateChange(state)} width={'350px'} top={'0'}> 
                     {!this.state.loadingMain && 
                         mainMenu.menu.map((menuItem, i) =>
                         <div key={i} >
                             {menuItem.module.includes("section") ?
                                 <React.Fragment>
-                                    {this.props.path == "/"?
+                                    {this.props.path === "/"?
                                     <ScrollLink
                                     onClick={() => this.toggleMenu()}
                                     to={menuItem.url}
@@ -173,12 +176,12 @@ export class MobileMenu extends Component {
                     </Fragment>
                     }
                     <div style={{marginTop:"20px", textAlign:"center"}}>
-                    <a className="bm-item menu-item-small" href="#"><i className="fa fa-user"></i> Logowanie</a>
+                        {//<a className="bm-item menu-item-small" href="#"><i className="fa fa-user"></i> Konto</a>
+                        }
                     </div>
                 </Menu>
 
-                <header>
-                    <Navbar className="navbar-expand-sm navbar-toggleable-sm ng-white mb-3" dark fixed="top" style={{ backgroundColor: global.window.scrollY > 100 ? "#262626" : "transparent" }}>
+                    <Navbar className="navbar-expand-sm navbar-toggleable-sm ng-white mb-3" dark fixed="top" style={{ borderBottom: "2px solid #051E38", backgroundColor: mainColor, top: global.window.scrollY > 30 ? 0 : 60 }}>
                         <Container>
                             <NavbarBrand href="/"><img src={process.env.PUBLIC_URL + '/images/logo_transp.png'} alt="Lewiatian Regionalna Platforma Dialogu" /></NavbarBrand>
                            
@@ -187,7 +190,7 @@ export class MobileMenu extends Component {
                             </div>
                         </Container>
                     </Navbar>
-                </header>
+
             </React.Fragment>
         );
     }

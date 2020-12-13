@@ -5,8 +5,8 @@ import ContentNews from './ContentNews'
 import ContentCalendar from './ContentCalendar'
 import ContentGallery from './ContentGallery'
 import ContentVideoGallery from './ContentVideoGallery'
-import ContentMembers from './ContentMembers'
 import ContentContact from './ContentContact'
+import ContentCourse from './ContentCourse'
 import Section from '../section/Section'
 import PropTypes from 'prop-types'
 import './content.css'
@@ -31,7 +31,6 @@ export class Content extends Component {
     componentDidMount() {
 
         const { url } = this.props.match.params;
-        console.log(this.props.match.params);
         this.populatePageData(url);
 
         //document.getElementById("root").style.backgroundImage = `url(${process.env.PUBLIC_URL + '/images/bcgkNormal.jpg'})`;
@@ -43,34 +42,36 @@ export class Content extends Component {
         return (
             <React.Fragment>
                 <Container>
-                {(page.modele === "link") &&
-                    <ContentLink content={page.content} baseUrl={url} />
+                
+                {(page.module === "link") &&
+                    <ContentLink content={page.content} baseUrl={url} title={page.title} />
                 }
 
-                {(page.modele === "news") &&
-                    <ContentNews content={page.content} baseUrl={url} />
+                {(page.module === "news") &&
+                    <ContentNews content={page.content} baseUrl={url} title={page.title}/>
                 }
 
-                {(page.modele === "calendar") &&
-                    <ContentCalendar content={page.content} baseUrl={url} />
+                {(page.module === "calendar") &&
+                    <ContentCalendar content={page.content} baseUrl={url} title={page.title}/>
                 }
 
-                {(page.modele === "gallery") &&
-                    <ContentGallery content={page.content} baseUrl={url} />
+                {(page.module === "gallery") &&
+                    <ContentGallery content={page.content} baseUrl={url} title={page.title}/>
                 }
 
-                {(page.modele === "video-gallery") &&
-                    <ContentVideoGallery content={page.content} baseUrl={url} />
+                {(page.module === "video-gallery") &&
+                    <ContentVideoGallery content={page.content} baseUrl={url} title={page.title}/>
                 }
 
-                {(page.modele === "members") &&
-                    <ContentMembers content={page.content} baseUrl={url} />
+                {(page.module === "contact") &&
+                    <ContentContact content={page.content} baseUrl={url} title={page.title}/>
                 }
 
-                {(page.modele === "contact") &&
-                    <ContentContact content={page.content} baseUrl={url} />
+                {(page.module === "custom-course") &&
+                    <ContentCourse content={page.content} baseUrl={url} title={page.title} />
                 }
 
+                
                 {page.sections.map(sections =>
                     <Section key={sections.hash} sections={sections} id={sections.hash} />
                 )}

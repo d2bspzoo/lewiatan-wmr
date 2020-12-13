@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Collapse, Container, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import './NavMenu.css';
 import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll'
+import TopNavEU from './TopNavUE'
 //const ScrollLink = Scroll.ScrollLink
 
 import { clientConnect } from '../../client';
@@ -108,24 +109,23 @@ export class NavMenu extends Component {
         : NavMenu.renderMenu(this.state.menus)
 
     return (
-        <header>
-            <Navbar className="navbar-expand-sm navbar-toggleable-sm ng-white" dark fixed="top" style={{ borderBottom: "2px solid #051E38", backgroundColor: global.window.scrollY > 30 ? mainColor : "transparent" }}>
+        <Navbar className="navbar-expand-sm navbar-toggleable-sm ng-white" dark fixed="top" style={{ borderBottom: "2px solid #051E38", backgroundColor: mainColor, top: global.window.scrollY > 30 ? 0 : 60 }}>
             <Container>
                 <div className="col-md-2">
                 <NavbarBrand href="/"><img src={process.env.PUBLIC_URL + '/images/logo_transp.png'} alt = "Lewiatan - Regionalna Platforma Dialogu" /></NavbarBrand>
                 </div>
-                <div className="col-md-7">
+                <div className="col-md-8">
                 <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
                 <Collapse className="d-sm-inline-flex" isOpen={!this.state.collapsed} navbar>       
                     {mainMenu}          
                 </Collapse>
                 </div>
-                <div className="col-md-3 col-sm-3 text-center" >
-                    <a className="nav-link text-blue" href="#" target="_blank"><i className="fa fa-user text-grey"></i>&nbsp;&nbsp;Logowanie</a>
+                <div className="col-md-2 col-sm-3 text-center" >
+                    {//<a className="nav-link text-blue" href="#" target="_blank"><i className="fa fa-user text-grey"></i>&nbsp;&nbsp;Konto</a> 
+                    }
                 </div>
             </Container>
         </Navbar>
-      </header>
     );
     }
 

@@ -4,10 +4,19 @@ import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from
 import BottomContent from './BottomContent';
 
 export class Bottom extends Component {
+
+    styleSection = (margintop, marginbottom) => {
+        return {
+            marginTop: `${margintop}px`,
+            marginBottom: `${marginbottom}px`,
+        }
+
+    }
+
     render() {
         return (
                 
-            <div className="bottomSection">
+            <div className="bottomSection" style={this.styleSection(this.props.bottoms.marginTop, this.props.bottoms.marginBottom)}>
                 <div className="container">
 
                     <div className="row">
