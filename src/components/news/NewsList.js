@@ -132,9 +132,9 @@ export class NewsList extends Component {
                     </div>
                   </div>
 
-                  {this.state.news.length < 5 && <div className="row">{newsTails}</div>}
+                  <div className="row">{newsTails}</div>
 
-                  {this.state.news.length >= 5 && <div className="row">{newsList}</div>}
+                  <div className="row">{newsList}</div>
                 </Fragment>
               ) : (
                 <Fragment>

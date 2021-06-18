@@ -14,7 +14,7 @@ export class SectionNews extends Component {
   }
 
   componentDidMount() {
-    this.populateNewsData("78b86d1a-dc0d-4fe3-ad87-cc29deec3b45", this.props.sectionContent.contentSecondary, 3);
+    this.populateNewsData("pl-PL", this.props.sectionContent.contentSecondary, 3);
   }
 
   styleSection = (background) => {
