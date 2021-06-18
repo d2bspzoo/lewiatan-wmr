@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types';
 import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
+import Calendar from '../calendar/Calendar';
 
 export class SectionCalendar extends Component {
 
@@ -31,11 +32,14 @@ export class SectionCalendar extends Component {
 
     render() {
 
-        let url = "calendar--events";
+        let url = "kalendarz";
 
         return (
             <div className={`col-lg-${this.props.sectionContent.widthInColumns} col-md-${this.props.sectionContent.widthInColumns} xs-text-center`}>
                 {ReactHtmlParser(this.props.sectionContent.content)}
+
+                <Calendar />
+                
             </div>
         )
     }

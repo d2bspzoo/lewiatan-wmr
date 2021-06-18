@@ -270,6 +270,55 @@ h6, .h6 {
     margin-top: 10px;
 }
 
+/* calendar */
+
+.datetime-calendar-small, .datetime-calendar-small table {
+    font-size: 90% !important;
+    text-align: center;
+}
+
+.datetime-calendar-large, .datetime-calendar-large table {
+    font-size: 140% !important;
+    text-align: center;
+}
+
+table.calendar-day{
+    font-size: 24px;
+    text-align: center;
+    display: inline;
+}
+
+table.calendar-day th {
+    padding: 20px 15px;
+}
+
+table.calendar-day td {
+    padding: 12px 15px;
+}
+
+td.calendar-day {
+    border: 1px solid #575A5E;
+}
+
+td.empty{
+    border:none;
+}
+
+td.sunday {
+    background-color: #003166;
+    color: #fff;
+}
+
+td.sunday {
+    background-color: #003166;
+    color: #fff;
+}
+
+td.today {
+    background-color: #FFD51A;
+    color: #575A5E;
+}
+
 @media (min-width: 1200px) {
 }
 
