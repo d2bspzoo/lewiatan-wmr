@@ -12,7 +12,7 @@ function myCustomFetch(url, params) {
   }
 */
 
-import { accessToken, siteId, apiUrl, apiUrl2 } from "./config";
+import { accessToken, siteId, apiUrl, apiUrl2, apiUrlConnect } from "./config";
 
 export async function clientConnect(url, ids, params) {
   var requestUrl = "";
@@ -54,9 +54,9 @@ export async function clientConnectLewiatan(url, ids, params) {
   var requestUrl = "";
 
   if (ids != null) {
-    requestUrl = "https://connect.konfederacjalewiatan.pl/" + url + "/" + ids;
+    requestUrl = apiUrlConnect + url + "/" + ids;
   } else {
-    requestUrl = "https://connect.konfederacjalewiatan.pl/" + url;
+    requestUrl = apiUrlConnect + url;
   }
 
   const response = await fetch(requestUrl, {

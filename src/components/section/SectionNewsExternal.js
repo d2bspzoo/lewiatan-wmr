@@ -1,10 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import ReactHtmlParser, {
-  processNodes,
-  convertNodeToElement,
-  htmlparser2,
-} from "react-html-parser";
+import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from "react-html-parser";
 import { clientConnectLewiatan } from "../../client";
 import Moment from "react-moment";
 
@@ -87,8 +83,7 @@ export class SectionNewsExternal extends Component {
               {ReactHtmlParser(ReactHtmlParser(news.abstract))}
               {news.newsShowDate && (
                 <p>
-                  Data publikacji:{" "}
-                  <Moment format="DD.MM.YYYY">{news.newsDate}</Moment>
+                  Data publikacji: <Moment format="DD.MM.YYYY">{news.newsDate}</Moment>
                 </p>
               )}
             </div>
@@ -106,16 +101,10 @@ export class SectionNewsExternal extends Component {
   }
 
   render() {
-    let newsList = this.state.loadingNews ? (
-      <p className="text-center">Loading...</p>
-    ) : (
-      SectionNewsExternal.renderNews(this.state.news)
-    );
+    let newsList = this.state.loadingNews ? <p className="text-center">Loading...</p> : SectionNewsExternal.renderNews(this.state.news);
 
     return (
-      <div
-        className={`col-lg-${this.props.sectionContent.widthInColumns} col-md-${this.props.sectionContent.widthInColumns} xs-text-center`}
-      >
+      <div className={`col-lg-${this.props.sectionContent.widthInColumns} col-md-${this.props.sectionContent.widthInColumns} xs-text-center`}>
         {ReactHtmlParser(this.props.sectionContent.content)}
         <div className="margin-b-1"></div>
         {newsList}
@@ -125,10 +114,7 @@ export class SectionNewsExternal extends Component {
 
   async populateNewsData() {
     this.setState({
-      news: await clientConnectLewiatan(
-        "api/news/list",
-        `?channel=c978c4fe-6764-4246-a8f4-134b71767357&showdate=true&showcontent=false&page=0&items=5`
-      ),
+      news: await clientConnectLewiatan("api/news/list", `?channel=6e01b015-f0e1-4ed8-8a5c-647c561880f8&showdate=true&showcontent=false&page=0&items=5`),
       loadingNews: false,
     });
   }
