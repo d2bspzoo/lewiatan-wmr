@@ -4,7 +4,7 @@ definitions:
       memory: 3072
       
 options:
-  max-time: 15
+  max-time: 10
 
 pipelines:
   branches:
@@ -14,7 +14,7 @@ pipelines:
           deployment: 'test'
           services:
             - docker
-          size: 2x
+          size: 4x
           script:
             - pipe: 'microsoft/azure-static-web-apps-deploy:main'
               variables:
