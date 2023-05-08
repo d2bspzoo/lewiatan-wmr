@@ -11,3 +11,7 @@ pipelines:
                 #API_LOCATION: '$BITBUCKET_CLONE_DIR/api'
                 OUTPUT_LOCATION: "$BITBUCKET_CLONE_DIR/build"
                 API_TOKEN: $deployment_token
+definitions:
+  services:
+    docker:
+      memory: 4096 # as per your requirement
