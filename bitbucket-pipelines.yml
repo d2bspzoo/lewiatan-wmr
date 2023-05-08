@@ -3,6 +3,7 @@ pipelines:
     main:
       - step:
           name: Deploy to AZ Static Website
+          size: 2x
           deployment: test
           script:
             - pipe: microsoft/azure-static-web-apps-deploy:main
@@ -14,4 +15,4 @@ pipelines:
 definitions:
   services:
     docker:
-      memory: 2048 # as per your requirement
+      memory: 3072 # as per your requirement
