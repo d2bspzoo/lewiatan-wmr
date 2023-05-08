@@ -1,6 +1,5 @@
 ﻿import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
-import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from "react-html-parser";
 import EventDetails from "../event/EventDetails";
 import EventList from "../event/EventList";
 

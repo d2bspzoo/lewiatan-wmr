@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
-import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from "react-html-parser";
+import HtmlReactParser from "html-react-parser";
 import { clientConnect } from "../../client";
 import Moment from "react-moment";
 
@@ -42,7 +42,7 @@ export class NewsList extends Component {
             <h3>
               <a href={`/${this.props.baseUrl.url}/news/${this.state.news[i].url}`}>{this.state.news[i].title}</a>
             </h3>
-            {ReactHtmlParser(this.state.news[i].abstract)}
+            {HtmlReactParser(this.state.news[i].abstract)}
             <p>
               <a href={`/${this.props.baseUrl.url}/news/${this.state.news[i].url}`} className="btn btn-default">
                 czytaj więcej...
@@ -71,7 +71,7 @@ export class NewsList extends Component {
             <h3>
               <a href={`/${this.props.baseUrl.url}/news/${this.state.news[i].url}`}>{this.state.news[i].title}</a>
             </h3>
-            {ReactHtmlParser(this.state.news[i].abstract)}
+            {HtmlReactParser(this.state.news[i].abstract)}
             <p>
               <a href={`/${this.props.baseUrl.url}/news/${this.state.news[i].url}`} className="btn btn-default">
                 czytaj więcej...
@@ -123,7 +123,7 @@ export class NewsList extends Component {
                       <h3>
                         <a href={`/${this.props.baseUrl.url}/news/${this.state.news[0].url}`}>{this.state.news[0].title}</a>
                       </h3>
-                      {ReactHtmlParser(this.state.news[0].abstract)}
+                      {HtmlReactParser(this.state.news[0].abstract)}
                       <p>
                         <a href={`/${this.props.baseUrl.url}/news/${this.state.news[0].url}`} className="btn btn-default">
                           czytaj więcej...

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from "react-html-parser";
+import HtmlReactParser from "html-react-parser";
 import { clientConnectLewiatan } from "../../client";
 import Moment from "react-moment";
 
@@ -8,38 +8,7 @@ export class SectionNewsExternal extends Component {
   constructor(props) {
     super();
     this.state = {
-      news: [
-        //     {
-        //         title: 'Lewiatan apeluje o zawarcie paktu społecznego',
-        //         url: 'http://konfederacjalewiatan.pl/aktualnosci/2020/1/_lewiatan_apeluje_o_zawarcie_paktu_spolecznego',
-        //         newsShowDate: true,
-        //         newsDate: '2020-12-21'
-        //     },
-        //     {
-        //         title: 'Konsultacje',
-        //         url: 'http://konfederacjalewiatan.pl/aktualnosci/2020/1/konsultacje',
-        //         newsShowDate: true,
-        //         newsDate: '2020-12-21'
-        //     },
-        //     {
-        //         title: 'Sprzedaż detaliczna spętana obostrzeniami w handlu',
-        //         url: 'http://konfederacjalewiatan.pl/aktualnosci/2020/1/sprzedaz_detaliczna_spetana_obostrzeniami_w_handlu',
-        //         newsShowDate: true,
-        //         newsDate: '2020-12-21'
-        //     },
-        //     {
-        //         title: 'Wkrótce ruszą konsultacje społeczne Krajowego Planu Odbudowy',
-        //         url: 'http://konfederacjalewiatan.pl/aktualnosci/2020/1/wkrotce_rusza_konsultacje_spoleczne_krajowego_planu_odbudowy',
-        //         newsShowDate: true,
-        //         newsDate: '2020-12-18'
-        //     },
-        //     {
-        //         title: 'Europejski Komitet Ekonomiczno-Społeczny ruszył do pracy',
-        //         url: 'http://konfederacjalewiatan.pl/aktualnosci/2020/1/europejski_komitet_ekonomicznospoleczny_ruszyl_do_pracy',
-        //         newsShowDate: true,
-        //         newsDate: '2020-12-17'
-        //     }
-      ],
+      news: [],
       loadingNews: true,
     };
   }
@@ -77,10 +46,10 @@ export class SectionNewsExternal extends Component {
             key={i}
           >
             <div className="col-md-11">
-              <a href={news.url} target="_blank" className="text-blue">
+              <a href={news.url} target="_blank" className="text-blue" rel="noreferrer">
                 <h3 className="news-title">{news.title}</h3>
               </a>
-              {ReactHtmlParser(ReactHtmlParser(news.abstract))}
+              {!!news.abstract && HtmlReactParser(news.abstract)}
               {news.newsShowDate && (
                 <p>
                   Data publikacji: <Moment format="DD.MM.YYYY">{news.newsDate}</Moment>
@@ -89,7 +58,7 @@ export class SectionNewsExternal extends Component {
             </div>
             <div className="col-md-1">
               <p>
-                <a href={news.url} target="_blank" className="text-blue">
+                <a href={news.url} target="_blank" className="text-blue" rel="noreferrer">
                   <i className="fas fa-arrow-alt-circle-right fa-2x"></i>
                 </a>
               </p>
@@ -105,7 +74,7 @@ export class SectionNewsExternal extends Component {
 
     return (
       <div className={`col-lg-${this.props.sectionContent.widthInColumns} col-md-${this.props.sectionContent.widthInColumns} xs-text-center`}>
-        {ReactHtmlParser(this.props.sectionContent.content)}
+        {/* {HtmlReactParser(this.props.sectionContent.content)} */}
         <div className="margin-b-1"></div>
         {newsList}
       </div>
