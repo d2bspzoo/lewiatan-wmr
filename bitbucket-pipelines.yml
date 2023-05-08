@@ -14,4 +14,4 @@ pipelines:
 definitions:
   services:
     docker:
-      memory: 4096 # as per your requirement
+      memory: 2048 # as per your requirement
