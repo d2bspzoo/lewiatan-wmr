@@ -1,6 +1,5 @@
 ﻿import React, { Component } from "react";
 import PropTypes from "prop-types";
-import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from "react-html-parser";
 import NewsDetails from "../news/NewsDetails";
 import NewsList from "../news/NewsList";
 

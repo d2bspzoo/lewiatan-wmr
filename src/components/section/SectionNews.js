@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
-import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from "react-html-parser";
+import HtmlReactParser from "html-react-parser";
 import { clientConnect } from "../../client";
 import Moment from "react-moment";
 
@@ -42,7 +42,7 @@ export class SectionNews extends Component {
                 {news.map((news, i) => (
                   <div className={`col-md-${colsNum} news-slice`}>
                     <h3>{news.title}</h3>
-                    {ReactHtmlParser(news.abstract)}
+                    {!!news.abstract && HtmlReactParser(news.abstract)}
                     {news.newsShowDate && (
                       <p className="small">
                         Data publikacji: <Moment format="DD.MM.YYYY">{news.newsDate}</Moment>
@@ -73,7 +73,7 @@ export class SectionNews extends Component {
 
     return (
       <div className={`col-lg-${this.props.sectionContent.widthInColumns} col-md-${this.props.sectionContent.widthInColumns} xs-text-center`}>
-        {ReactHtmlParser(this.props.sectionContent.content)}
+        {!!this.props.sectionContent.content && HtmlReactParser(this.props.sectionContent.content)}
 
         {newsList}
       </div>

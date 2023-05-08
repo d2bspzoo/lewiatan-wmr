@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types';
-import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
+import HtmlReactParser from "html-react-parser";
 
 export class Newsletter extends Component {
 
@@ -15,7 +15,7 @@ export class Newsletter extends Component {
                     </React.Fragment>
                 }
 
-                {ReactHtmlParser(ReactHtmlParser(this.props.content.contentContent))}
+                {HtmlReactParser(HtmlReactParser(this.props.content.contentContent))}
 
                 {(this.props.content.contentShowdate == true) &&
                     <p class="small">Data aktualizacji:

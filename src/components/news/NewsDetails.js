@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
-import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from "react-html-parser";
+import HtmlReactParser from "html-react-parser";
 import { clientConnect } from "../../client";
 import Moment from "react-moment";
 
@@ -38,7 +38,7 @@ export class NewsDetails extends Component {
                 />
               )}
               <div className="row mt-3">
-                <div className="col-md-12">{ReactHtmlParser(this.state.news.content)}</div>
+                <div className="col-md-12">{HtmlReactParser(this.state.news.content)}</div>
               </div>
               {this.state.news.newsShowDate === true && (
                 <p class="small">

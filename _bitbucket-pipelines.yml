@@ -1,0 +1,23 @@
+definitions:
+  services:
+    docker:
+      memory: 3072
+      
+options:
+  max-time: 10
+
+pipelines:
+  branches:
+    main:
+      - step:
+          name: 'Deploy to AZ Static Website'
+          deployment: 'test'
+          services:
+            - docker
+          size: 2x
+          script:
+            - pipe: 'microsoft/azure-static-web-apps-deploy:main'
+              variables:
+                APP_LOCATION: '$BITBUCKET_CLONE_DIR'
+                OUTPUT_LOCATION: '$BITBUCKET_CLONE_DIR/build'
+                API_TOKEN: $deployment_token
