@@ -3,7 +3,7 @@ pipelines:
     main:
       - step:
           name: Deploy to AZ Static Website
-          deployment: test
+          deployment: AZ
           script:
             - pipe: microsoft/azure-static-web-apps-deploy:main
               variables:
